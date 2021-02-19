@@ -1,0 +1,12 @@
+diff --git a/scripts/systemd/nut-server.service.in b/scripts/systemd/nut-server.service.in
+index c8e195a9..a4621784 100644
+--- a/scripts/systemd/nut-server.service.in
++++ b/scripts/systemd/nut-server.service.in
+@@ -18,6 +18,7 @@ Before=nut-monitor.service
+ PartOf=nut.target
+ 
+ [Service]
++ExecStartPre=-/bin/mkdir /var/run/nut
+ EnvironmentFile=-@CONFPATH@/nut.conf
+ ExecStart=@SBINDIR@/upsd
+ ExecReload=@SBINDIR@/upsd -c reload
