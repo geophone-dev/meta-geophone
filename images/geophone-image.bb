@@ -26,6 +26,7 @@ RPI_STUFF = " \
 
 GPS_STUFF = " \
     gpsd \
+    gps-utils \
 "
 
 POWER_MANAGEMENT = " \
