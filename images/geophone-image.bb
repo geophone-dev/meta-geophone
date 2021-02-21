@@ -27,6 +27,7 @@ RPI_STUFF = " \
 GPS_STUFF = " \
     gpsd \
     gps-utils \
+    geoclue \
 "
 
 POWER_MANAGEMENT = " \
@@ -35,6 +36,7 @@ POWER_MANAGEMENT = " \
 
 ADDONS = " \
     python3 \
+    nginx \
 "
 
 IMAGE_INSTALL += " \
