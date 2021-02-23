@@ -22,6 +22,8 @@ RPI_STUFF = " \
     omxplayer \
     raspi2fb \
     userland \
+    spidev-test \
+    adc2tcp \
 "
 
 GPS_STUFF = " \
