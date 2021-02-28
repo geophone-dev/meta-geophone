@@ -23,7 +23,8 @@ RPI_STUFF = " \
     raspi2fb \
     userland \
     spidev-test \
-    adc2tcp \
+    adc2tcp \   
+    adc-read \
 "
 
 GPS_STUFF = " \
