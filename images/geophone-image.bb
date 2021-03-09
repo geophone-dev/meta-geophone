@@ -1,5 +1,5 @@
 SUMMARY = "A console development image customized for the rpi"
-HOMEPAGE = "http://www.jumpnowtek.com"
+HOMEPAGE = "http://zuckerman.dev"
 
 require images/basic-dev-image.bb
 
@@ -19,18 +19,17 @@ DEV_EXTRAS = " \
 "
 
 RPI_STUFF = " \
-    omxplayer \
     raspi2fb \
     userland \
     spidev-test \
     adc2tcp \   
     adc-read \
+    geod \
 "
 
 GPS_STUFF = " \
     gpsd \
     gps-utils \
-    geoclue \
 "
 
 POWER_MANAGEMENT = " \
