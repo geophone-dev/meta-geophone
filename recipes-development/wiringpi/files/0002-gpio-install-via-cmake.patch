@@ -1,0 +1,27 @@
+From 9755176acde4a88e08148844f369c6ad50aa6f41 Mon Sep 17 00:00:00 2001
+From: Michael Tsukerman <miketsukerman@gmail.com>
+Date: Sat, 13 Mar 2021 07:54:45 +0000
+Subject: [PATCH 2/2] gpio: install via cmake
+
+rename to gpio
+install in /usr/bin
+---
+ CMakeLists.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index fd0005d..a934bd9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -145,6 +145,8 @@ target_include_directories(${PROJECT_NAME}
+ 
+ add_executable(wiringpi-gpio gpio/gpio.c gpio/readall.c)
+ target_link_libraries(wiringpi-gpio ${PROJECT_NAME} ${PROJECT_NAME}Dev Threads::Threads rt crypt m)
++set_target_properties(wiringpi-gpio PROPERTIES OUTPUT_NAME gpio)
++install(TARGETS wiringpi-gpio DESTINATION ${CMAKE_INSTALL_BINDIR})
+ target_include_directories(wiringpi-gpio
+     PRIVATE 
+         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/wiringPiD>
+-- 
+2.24.3
+
