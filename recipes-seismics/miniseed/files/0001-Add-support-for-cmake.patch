@@ -1,0 +1,177 @@
+From d9c0c1b9e77413a74315a357e0cdda86c6ff3151 Mon Sep 17 00:00:00 2001
+From: Michael Tsukerman <miketsukerman@gmail.com>
+Date: Tue, 16 Mar 2021 22:15:11 +0100
+Subject: [PATCH] Add support for cmake
+
+Write cmake build scripts for library and examples
+---
+ CMakeLists.txt       | 144 +++++++++++++++++++++++++++++++++++++++++++
+ mseedConfig.cmake.in |   3 +
+ 2 files changed, 147 insertions(+)
+ create mode 100644 CMakeLists.txt
+ create mode 100644 mseedConfig.cmake.in
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+new file mode 100644
+index 0000000..2adc158
+--- /dev/null
++++ b/CMakeLists.txt
+@@ -0,0 +1,144 @@
++cmake_minimum_required(VERSION 3.10)
++
++project(mseed VERSION 3.0.8)
++
++set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
++set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
++set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
++
++option(ENABLE_API_DOCUMENTATION "Enable API documentation" OFF)
++
++set(MSEED_HEADERS 
++    unpackdata.h
++    gmtime64.h
++    msio.h
++    unpack.h
++    mseedformat.h
++    parson.h
++    libmseed.h
++    packdata.h
++)
++
++set(MSEED_SOURCES 
++    tracelist.c
++    unpackdata.c
++    lookup.c
++    parson.c
++    gswap.c
++    pack.c
++    packdata.c
++    genutils.c
++    fileutils.c
++    gmtime64.c
++    selection.c
++    crc32c.c
++    parseutils.c
++    msio.c
++    extraheaders.c
++    unpack.c
++    logging.c
++    msrutils.c
++)
++
++set(TARGET_MSEED ${PROJECT_NAME})
++add_library(${TARGET_MSEED} SHARED ${MSEED_SOURCES})
++target_include_directories(${TARGET_MSEED} 
++        PRIVATE 
++        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
++        PUBLIC 
++        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${TARGET_MSEED}/>
++)
++
++include(CMakePackageConfigHelpers)
++
++set_property(TARGET ${TARGET_MSEED} PROPERTY VERSION ${PROJECT_VERSION})
++set_property(TARGET ${TARGET_MSEED} PROPERTY SOVERSION ${PROJECT_VERSION_MAJOR})
++
++install(TARGETS ${TARGET_MSEED} 
++    EXPORT ${TARGET_MSEED}Targets
++    DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    )
++
++write_basic_package_version_file(
++    "${CMAKE_CURRENT_BINARY_DIR}/${TARGET_MSEED}/${TARGET_MSEED}ConfigVersion.cmake"
++    VERSION ${PROJECT_VERSION}
++    COMPATIBILITY AnyNewerVersion
++    )
++
++configure_package_config_file(mseedConfig.cmake.in
++        ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_MSEED}/${TARGET_MSEED}Config.cmake
++        INSTALL_DESTINATION 
++            ${CMAKE_INSTALL_LIBDIR}/cmake/${TARGET_MSEED}/
++)
++  
++install(EXPORT ${TARGET_MSEED}Targets
++    FILE
++        ${TARGET_MSEED}Targets.cmake
++    NAMESPACE 
++        "mseed::"
++    DESTINATION
++        ${CMAKE_INSTALL_LIBDIR}/cmake/${TARGET_MSEED}
++    COMPONENT
++        Devel
++)
++    
++install(
++    FILES
++        "${CMAKE_CURRENT_BINARY_DIR}/${TARGET_MSEED}/${TARGET_MSEED}Config.cmake"
++        "${CMAKE_CURRENT_BINARY_DIR}/${TARGET_MSEED}/${TARGET_MSEED}ConfigVersion.cmake"
++    DESTINATION
++        ${CMAKE_INSTALL_LIBDIR}/cmake/${TARGET_MSEED}
++    COMPONENT
++        Devel
++)
++
++install(FILES ${MSEED_HEADERS} 
++    DESTINATION 
++        ${CMAKE_INSTALL_INCLUDEDIR}/${TARGET_MSEED}/
++    COMPONENT 
++        Devel
++)
++
++set(EXAMPLES
++    lm_read_buffer
++    lm_timestr
++    lm_pack_rollingbuffer
++    mseedview
++    lm_sids
++    lm_read_recordlist
++    lm_pack
++    lm_parse
++    lm_read_selection
++)
++
++foreach(EXAMPLE ${EXAMPLES})
++    add_executable(${EXAMPLE} example/${EXAMPLE}.c)
++    target_link_libraries(${EXAMPLE} PRIVATE ${TARGET_MSEED})
++    target_include_directories(${EXAMPLE} PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
++endforeach()
++
++if(ENABLE_API_DOCUMENTATION)
++    find_package(Doxygen
++                REQUIRED dot
++                OPTIONAL_COMPONENTS mscgen dia)
++
++    set(DOXYGEN_GENERATE_HTML YES)
++    
++    doxygen_add_docs(
++        doxygen
++        ${PROJECT_SOURCE_DIR}
++        COMMENT "Generate API documentation"
++    )                
++endif()
++
++set(CPACK_PACKAGE_NAME "mseed")
++set(CPACK_PACKAGE_VENDOR "Mikhail Tcukerman <michael@zuckerman.dev>")
++set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Analog to digital convertion library")
++set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
++set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
++set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
++set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
++set(CPACK_DEBIAN_PACKAGE_MAINTAINER ${CPACK_PACKAGE_VENDOR})
++set(CPACK_GENERATOR "RPM;DEB")
++
++include(CPack)
+\ No newline at end of file
+diff --git a/mseedConfig.cmake.in b/mseedConfig.cmake.in
+new file mode 100644
+index 0000000..94f8bbd
+--- /dev/null
++++ b/mseedConfig.cmake.in
+@@ -0,0 +1,3 @@
++@PACKAGE_INIT@
++
++include("${CMAKE_CURRENT_LIST_DIR}/@TARGET_MSEED@Targets.cmake")
+\ No newline at end of file
+-- 
+2.25.1
+
