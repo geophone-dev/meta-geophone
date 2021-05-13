@@ -133,7 +133,6 @@ IMAGE_INSTALL += " \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
     ${WIFI} \
-    ${WIREGUARD} \
 "
 
 export IMAGE_BASENAME = "geophone-image"
