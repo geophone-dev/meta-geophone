@@ -133,7 +133,6 @@ IMAGE_INSTALL += " \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
     ${WIFI} \
-    ${SECURITY_TOOLS} \
     ${WIREGUARD} \
 "
 
