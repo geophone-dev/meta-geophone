@@ -104,7 +104,6 @@ DEV_EXTRAS = " \
 "
 
 RPI_STUFF = " \
-    raspi2fb \
     userland \
     spidev-test \
     adc2tcp \   
