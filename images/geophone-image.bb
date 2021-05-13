@@ -106,7 +106,6 @@ DEV_EXTRAS = " \
 RPI_STUFF = " \
     userland \
     spidev-test \
-    adc2tcp \   
     adc-read \
     geod \
 "
