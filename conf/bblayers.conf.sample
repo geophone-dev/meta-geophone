@@ -5,15 +5,17 @@ POKY_BBLAYERS_CONF_VERSION = "2"
 BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
+GEOPHONE_LAYERS = "${@os.path.abspath(os.path.join("${TOPDIR}", os.pardir))}"
+
 BBLAYERS ?= " \
-    ${HOME}/poky/meta \
-    ${HOME}/poky/meta-poky \
-    ${HOME}/poky/meta-openembedded/meta-oe \
-    ${HOME}/poky/meta-openembedded/meta-multimedia \
-    ${HOME}/poky/meta-openembedded/meta-networking \
-    ${HOME}/poky/meta-openembedded/meta-perl \
-    ${HOME}/poky/meta-openembedded/meta-python \
-    ${HOME}/poky/meta-openembedded/meta-webserver \
-    ${HOME}/poky/meta-raspberrypi \
-    ${HOME}/poky/meta-geophone \
+    ${GEOPHONE_LAYERS}/geophone/meta \
+    ${GEOPHONE_LAYERS}/geophone/meta-poky \
+    ${GEOPHONE_LAYERS}/geophone/meta-openembedded/meta-oe \
+    ${GEOPHONE_LAYERS}/geophone/meta-openembedded/meta-multimedia \
+    ${GEOPHONE_LAYERS}/geophone/meta-openembedded/meta-networking \
+    ${GEOPHONE_LAYERS}/geophone/meta-openembedded/meta-perl \
+    ${GEOPHONE_LAYERS}/geophone/meta-openembedded/meta-python \
+    ${GEOPHONE_LAYERS}/geophone/meta-openembedded/meta-webserver \
+    ${GEOPHONE_LAYERS}/geophone/meta-raspberrypi \
+    ${GEOPHONE_LAYERS}/geophone/meta-geophone \
 "
