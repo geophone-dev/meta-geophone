@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 inherit module
 
-SRCREV = "78f9023e0fb1321537286e8f5cbe724c529c336a"
+SRCREV = "be9475963108e772786d69f3b276f220507bd122"
 SRC_URI = "git://github.com/zuckerman-dev/ads1256-rtdm.git;protocol=https;branch=add-sources"
 
 S = "${WORKDIR}/git"
