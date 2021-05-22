@@ -8,7 +8,7 @@ inherit module
 SRCREV = "dc11a51367322bae8fdaba7ce0ac37edc0c7087d"
 SRC_URI = "git://github.com/zuckerman-dev/ads1256-rtdm.git;protocol=https;branch=add-sources"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/git"
 
 # The inherit of module.bbclass will automatically name module packages with
 # "kernel-module-" prefix as required by the oe-core build environment.
