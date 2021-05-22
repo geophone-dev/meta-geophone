@@ -13,4 +13,4 @@ S = "${WORKDIR}"
 # The inherit of module.bbclass will automatically name module packages with
 # "kernel-module-" prefix as required by the oe-core build environment.
 
-RPROVIDES_${PN} += "ads1256-rtdm"
+RPROVIDES_${PN} += "kernel-module-ads1256-rtdm"
