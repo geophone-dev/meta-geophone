@@ -134,4 +134,6 @@ IMAGE_INSTALL += " \
     ${WIFI} \
 "
 
+TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
+
 export IMAGE_BASENAME = "geophone-image"
