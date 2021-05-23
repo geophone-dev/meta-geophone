@@ -21,7 +21,7 @@ prefix="/usr/xenomai"
 
 EXTRA_OECONF += "--with-core=cobalt"
 
-FILES_${PN} += "
+FILES_${PN} += " \
   /usr/xenomai/demo/bufp-readwrite \
   /usr/xenomai/demo/xddp-echo \
   /usr/xenomai/demo/cyclictest \
