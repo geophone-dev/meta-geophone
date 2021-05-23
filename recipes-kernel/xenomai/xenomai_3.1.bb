@@ -15,7 +15,7 @@ SRC_URI = "https://xenomai.org/downloads/xenomai/stable/xenomai-${PV}.tar.bz2"
 SRC_URI[sha256sum] = "6469aa40d0e61aca9342ba39e822b710177734b171e53a4ab9abb97401a2c480"
 SRC_URI[md5sum] = "b723010a75fa0e87a09908c40a0105e9"
 
-inherit autotools
+inherit autotools pkgconfig
 
 prefix="/usr/xenomai"
 
