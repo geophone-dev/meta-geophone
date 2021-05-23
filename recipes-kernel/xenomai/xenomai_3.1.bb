@@ -17,6 +17,6 @@ SRC_URI[md5sum] = "b723010a75fa0e87a09908c40a0105e9"
 
 inherit autotools
 
-EXTRA_OECONF += "--with-core=cobalt"
-
-CONFIGUREOPTS_remove = "--includedir=${includedir}"
+EXTRA_OECONF += "--with-core=cobalt \ 
+                --prefix=/usr/xenomai \
+                "
