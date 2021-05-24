@@ -125,7 +125,7 @@ ADDONS = " \
 "
 
 LINUX_RT = " \
-    xenomai
+    xenomai \
 "
 
 IMAGE_INSTALL += " \
