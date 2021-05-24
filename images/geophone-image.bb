@@ -124,6 +124,10 @@ ADDONS = " \
     nginx \
 "
 
+LINUX_RT = " \
+    xenomai
+"
+
 IMAGE_INSTALL += " \
     firewall \
     ${ADDONS} \
@@ -131,6 +135,7 @@ IMAGE_INSTALL += " \
     ${GPS_STUFF} \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
+    ${LINUX_RT} \
     ${WIFI} \
 "
 
