@@ -124,6 +124,10 @@ ADDONS = " \
     nginx \
 "
 
+KERNEL_MODULES = " \
+    ads1256-mod \
+"
+
 IMAGE_INSTALL += " \
     firewall \
     ${ADDONS} \
@@ -132,6 +136,7 @@ IMAGE_INSTALL += " \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
     ${WIFI} \
+    ${KERNEL_MODULES}
 "
 
 TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
