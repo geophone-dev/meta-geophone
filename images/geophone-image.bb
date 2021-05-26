@@ -136,7 +136,7 @@ IMAGE_INSTALL += " \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
     ${WIFI} \
-    ${KERNEL_MODULES}
+    ${KERNEL_MODULES} \
 "
 
 TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
