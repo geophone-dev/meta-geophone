@@ -22,20 +22,20 @@ prefix="/usr/xenomai"
 EXTRA_OECONF += "--with-core=cobalt"
 
 FILES_${PN} += " \
-  /usr/xenomai/demo/bufp-readwrite \
-  /usr/xenomai/demo/xddp-echo \
-  /usr/xenomai/demo/cyclictest \
-  /usr/xenomai/demo/gpiopwm \
-  /usr/xenomai/demo/xddp-label \
-  /usr/xenomai/demo/eth_p_all \
-  /usr/xenomai/demo/can_rtt \
-  /usr/xenomai/demo/bufp-label \
-  /usr/xenomai/demo/altency \
-  /usr/xenomai/demo/iddp-sendrecv \
-  /usr/xenomai/demo/xddp-stream \
-  /usr/xenomai/demo/iddp-label \
-  /usr/xenomai/demo/cross-link \
-  /usr/xenomai/lib/cobalt.wrappers \
-  /usr/xenomai/lib/dynlist.ld \
-  /usr/xenomai/lib/modechk.wrappers \
+  ${prefix}/demo/bufp-readwrite \
+  ${prefix}/demo/xddp-echo \
+  ${prefix}/demo/cyclictest \
+  ${prefix}/demo/gpiopwm \
+  ${prefix}/demo/xddp-label \
+  ${prefix}/demo/eth_p_all \
+  ${prefix}/demo/can_rtt \
+  ${prefix}/demo/bufp-label \
+  ${prefix}/demo/altency \
+  ${prefix}/demo/iddp-sendrecv \
+  ${prefix}/demo/xddp-stream \
+  ${prefix}/demo/iddp-label \
+  ${prefix}/demo/cross-link \
+  ${prefix}/lib/cobalt.wrappers \
+  ${prefix}/lib/dynlist.ld \
+  ${prefix}/lib/modechk.wrappers \
 "
