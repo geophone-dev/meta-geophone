@@ -14,6 +14,7 @@ CORE_OS = " \
 "
 KERNEL_EXTRA = " \
     kernel-modules \
+    kernel-module-ads1256 \
 "
 
 EXTRA_TOOLS = " \
