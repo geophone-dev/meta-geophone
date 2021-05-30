@@ -142,4 +142,8 @@ IMAGE_INSTALL += " \
 
 TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
 
+# uncomment to add ads1256 to the list of modules loaded by default 
+# MACHINE_EXTRA_RDEPENDS += "kernel-module-ads1256"
+MACHINE_EXTRA_RRECOMMENDS += "kernel-module-ads1256"
+
 export IMAGE_BASENAME = "geophone-image"
