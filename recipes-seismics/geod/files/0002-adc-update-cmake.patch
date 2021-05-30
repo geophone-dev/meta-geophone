@@ -1,0 +1,28 @@
+From 6a67dfbada508cc2dca2410a86e448e3cec21ae8 Mon Sep 17 00:00:00 2001
+From: Michael Tsukerman <miketsukerman@gmail.com>
+Date: Sun, 30 May 2021 19:01:41 +0200
+Subject: [PATCH 2/2] adc: update cmake
+
+Update cmake after adc reader changed
+---
+ CMakeLists.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0109d60..42628e9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -6,7 +6,9 @@ include(GNUInstallDirs)
+ 
+ set(SYSTEMD_UNIT_PATH "/lib/systemd/system/")
+ 
+-find_package(ads1256 CONFIG)
++find_package(adc CONFIG REQUIRED)
++find_package(adc1256 CONFIG REQUIRED)
++
+ find_package(cppzmq REQUIRED)
+ find_package(spdlog REQUIRED)
+ find_package(CLI11 REQUIRED)
+-- 
+2.25.1
+
