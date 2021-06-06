@@ -140,7 +140,25 @@ IMAGE_INSTALL += " \
     ${KERNEL_MODULES} \
 "
 
-TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
+TOOLCHAIN_TARGET_TASK += " \
+    kernel-devsrc \
+    concurrentqueue-dev \
+    "
+TOOLCHAIN_HOST_TASK += " \
+    nativesdk-perl \
+    nativesdk-perl-module-lib \
+    nativesdk-perl-module-base \
+    nativesdk-perl-module-bytes \
+    nativesdk-perl-module-data-dumper \
+    nativesdk-perl-module-digest-md5 \
+    nativesdk-perl-module-file-spec \
+    nativesdk-perl-module-file-spec-functions \
+    nativesdk-perl-module-file-spec-win32 \
+    nativesdk-perl-module-findbin \
+    nativesdk-perl-module-getopt-long \
+    nativesdk-perl-module-pod-text \
+    nativesdk-perl-module-getopt-std \
+    "
 
 # uncomment to add ads1256 to the list of modules loaded by default 
 # MACHINE_EXTRA_RDEPENDS += "kernel-module-ads1256"
