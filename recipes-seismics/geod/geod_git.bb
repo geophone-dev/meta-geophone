@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7c
 
 DEPENDS += "adc-read cppzmq spdlog"
 
-SRCREV = "346f0029a2ad0f2ca98983c79f266169f4c13181"
+SRCREV = "fb1d9091b34fade7ade694c6ce995411008f1546"
 SRC_URI = "git://github.com/zuckerman-dev/geod.git;protocol=https;branch=ads1263-support"
 
 S = "${WORKDIR}/git"

@@ -144,6 +144,8 @@ IMAGE_INSTALL += " \
 TOOLCHAIN_TARGET_TASK += " \
     kernel-devsrc \
     concurrentqueue-dev \
+    cppzmq-dev \
+    zeromq-staticdev \
     "
 TOOLCHAIN_HOST_TASK += " \
     nativesdk-perl \
