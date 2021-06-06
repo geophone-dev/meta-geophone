@@ -5,9 +5,17 @@ LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/BSD;md5=3775480a712fc46a696476
 
 DEPENDS += "boost"
 
-SRCREV = "3747268264d0fa113e981658a99ceeae4dad05b7"
-SRC_URI = "git://github.com/cameron314/concurrentqueue.git;protocol=https;branch=master"
+SRCREV = "e6fec438e8639221d43dae4b2ddf133e20580fdd"
+SRC_URI = "git://github.com/cameron314/concurrentqueue.git;protocol=https;branch=master \
+           file://0001-Modernize-cmake.patch \
+        "
 
 S = "${WORKDIR}/git"
 
+BBCLASSEXTEND = "native"
+
 inherit cmake
+
+# Header-only library
+RDEPENDS_${PN}-dev = ""
+RRECOMMENDS_${PN}-dbg = "${PN}-dev (= ${EXTENDPKGV})"
