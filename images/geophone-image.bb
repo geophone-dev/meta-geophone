@@ -114,6 +114,7 @@ RPI_STUFF = " \
 GPS_STUFF = " \
     gpsd \
     gps-utils \
+    geoclue \
 "
 
 POWER_MANAGEMENT = " \
