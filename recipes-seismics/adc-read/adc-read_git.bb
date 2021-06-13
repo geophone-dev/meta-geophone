@@ -5,8 +5,8 @@ LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-3.0;md5=c79ff39f19dfec6d29
 
 DEPENDS += "wiring-pi bcm2835 cli11 concurrentqueue spdlog date"
 
-SRCREV = "bbef6ece33a0e97529565b3b0dd9acc7921c2116"
-SRC_URI = "git://github.com/zuckerman-dev/adc-reader.git;protocol=https;branch=add-support-for-ads1263"
+SRCREV = "0445498e747cae138b1ce82ed56062ed75d0c4b3"
+SRC_URI = "git://github.com/zuckerman-dev/adc-reader.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 
