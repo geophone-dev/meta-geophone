@@ -30,6 +30,10 @@ EXTRA_TOOLS = " \
     grep \
     i2c-tools \
     ifupdown \
+    hostapd \
+    bluez5 \
+    bridge-utils \
+    dhcp-server \
     iperf3 \
     iproute2 \
     iptables \
