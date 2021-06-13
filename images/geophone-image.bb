@@ -111,8 +111,12 @@ DEV_EXTRAS = " \
 RPI_STUFF = " \
     userland \
     spidev-test \
+"
+
+GEO_STUFF = " \
     adc-read \
     geod \
+    miniseed \
 "
 
 GPS_STUFF = " \
@@ -141,6 +145,7 @@ IMAGE_INSTALL += " \
     ${GPS_STUFF} \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
+    ${GEO_STUFF} \
     ${WIFI} \
     ${KERNEL_MODULES} \
 "
