@@ -111,6 +111,9 @@ DEV_EXTRAS = " \
 RPI_STUFF = " \
     userland \
     spidev-test \
+    pijuiceboot \
+    python3-pijuice \
+    pijuice-firmware \
 "
 
 GEO_STUFF = " \
