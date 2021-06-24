@@ -1,4 +1,4 @@
-SUMMARY = "A console development image customized for the rpi"
+SUMMARY = "Console geophone image"
 HOMEPAGE = "http://zuckerman.dev"
 
 IMAGE_FEATURES += "package-management"
