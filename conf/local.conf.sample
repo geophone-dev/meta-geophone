@@ -21,7 +21,9 @@ VIRTUAL-RUNTIME_init_manager = "systemd"
 
 MACHINE_FEATURES_remove = "apm"
 
-IMAGE_FSTYPES = "tar.xz"
+IMAGE_FSTYPES = "tar.xz ext4.gz"
+
+RPI_USE_U_BOOT = "1"
 
 # Choose the board you are building for
 #MACHINE = "raspberrypi"
