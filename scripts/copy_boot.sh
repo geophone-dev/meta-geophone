@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KERNEL_IMAGETYPE=zImage
+KERNEL_IMAGETYPE=uImage
 
 if [ -z "${MACHINE}" ]; then
     # try to find it
@@ -138,7 +138,7 @@ else
 fi
 
 echo "Formatting FAT partition on ${DEV}"
-sudo mkfs.vfat -F 32 ${DEV} -n BOOT
+sudo mkfs.vfat -F 32 ${DEV} -n boot
 
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
