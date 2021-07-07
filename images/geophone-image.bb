@@ -114,6 +114,8 @@ RPI_STUFF = " \
     pijuiceboot \
     python3-pijuice \
     pijuice-firmware \
+    python3-urwid \
+    python3-smbus \
 "
 
 GEO_STUFF = " \
@@ -130,6 +132,7 @@ GPS_STUFF = " \
 
 POWER_MANAGEMENT = " \
     nut \
+    collectd \
 "
 
 ADDONS = " \
@@ -139,6 +142,12 @@ ADDONS = " \
 
 KERNEL_MODULES = " \
     ads1256-mod \
+"
+
+SW_UPDATE = " \
+    swupdate \
+    swupdate-tools \
+    libubootenv-bin \
 "
 
 IMAGE_INSTALL += " \
@@ -151,6 +160,7 @@ IMAGE_INSTALL += " \
     ${GEO_STUFF} \
     ${WIFI} \
     ${KERNEL_MODULES} \
+    ${SW_UPDATE} \
 "
 
 TOOLCHAIN_TARGET_TASK += " \
@@ -178,5 +188,7 @@ TOOLCHAIN_HOST_TASK += " \
 # uncomment to add ads1256 to the list of modules loaded by default 
 # MACHINE_EXTRA_RDEPENDS += "kernel-module-ads1256"
 MACHINE_EXTRA_RRECOMMENDS += "kernel-module-ads1256"
+
+IMAGE_ROOTFS_MAXSIZE = "1048576"
 
 export IMAGE_BASENAME = "geophone-image"

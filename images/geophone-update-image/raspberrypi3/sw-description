@@ -20,11 +20,11 @@ software =
 						type = "lua";
 					}
 				);
-                                uboot: (
-                                        {
-                                        	name = "rpipart";
-                                  		value = "2";
-                                        }
+				uboot: (
+					{
+						name = "rpipart";
+						value = "2";
+					}
 				);
 
 			};
@@ -43,11 +43,11 @@ software =
 						type = "lua";
 					}
 				);
-                                uboot: (
-                                        {
-                                        	name = "rpipart";
-                                  		value = "3";
-                                        }
+				uboot: (
+					{
+						name = "rpipart";
+						value = "3";
+					}
 				);
 			};
 		};

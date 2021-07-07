@@ -81,5 +81,7 @@ end
 function postinst()
 	local out = "Post installed script called"
 
+	cmdexec("/sbin/reboot")
+
 	return true, out
 end

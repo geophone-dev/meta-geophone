@@ -96,7 +96,7 @@ else
 fi
 
 echo "Formatting ${DEV} as ext4"
-sudo mkfs.ext4 -q -L ROOT ${DEV}
+sudo mkfs.ext4 -q -L root ${DEV}
 
 if [ "$?" -ne 0 ]; then
     echo "Error formatting ${DEV} as ext4"
