@@ -4,10 +4,7 @@ HOMEPAGE = "https://github.com/CLIUtils/CLI11"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=b73927b18d5c6cd8d2ed28a6ad539733"
 
-SRCREV = "4af78beef777e313814b4daff70e2da9171a385a"
-PV .= "+git${SRCPV}"
-
-SRC_URI += "gitsm://github.com/CLIUtils/CLI11;branch=master"
+SRC_URI += "git://github.com/CLIUtils/CLI11;tag=${PV}"
 
 S = "${WORKDIR}/git"
 
