@@ -8,7 +8,7 @@ SRC_URI = "git://github.com/zuckerman-dev/adc-fast-reader.git;protocol=https;bra
 
 S = "${WORKDIR}/git"
 
-inherit cmake
+inherit cmake systemd
 
 SYSTEMD_SERVICE_${PN} += " \
         adcrf.service \
