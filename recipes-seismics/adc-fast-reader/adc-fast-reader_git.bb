@@ -11,5 +11,5 @@ S = "${WORKDIR}/git"
 inherit cmake
 
 SYSTEMD_SERVICE_${PN} += " \
-        geod.service \
+        adcrf.service \
         "
