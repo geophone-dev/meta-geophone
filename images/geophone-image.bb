@@ -120,6 +120,7 @@ RPI_STUFF = " \
 
 GEO_STUFF = " \
     adc-read \
+    adc-fast-reader \
     geod \
     miniseed \
 "
