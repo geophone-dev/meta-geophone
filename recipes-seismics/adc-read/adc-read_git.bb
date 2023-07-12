@@ -1,6 +1,7 @@
 DESCRIPTION = "Console utility which reads data from ADC1256 and writes it to stdout"
 SECTION = "devel"
 LICENSE = "Apache-2.0"
+LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
 DEPENDS += "wiring-pi bcm2835 cli11 concurrentqueue asio spdlog date"
 
