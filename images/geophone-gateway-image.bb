@@ -139,10 +139,6 @@ ADDONS = " \
     nginx \
 "
 
-KERNEL_MODULES = " \
-    ads1256-mod \
-"
-
 SW_UPDATE = " \
     swupdate \
     swupdate-tools \
@@ -168,6 +164,7 @@ TOOLCHAIN_TARGET_TASK += " \
     cppzmq-dev \
     zeromq-staticdev \
     "
+
 TOOLCHAIN_HOST_TASK += " \
     nativesdk-perl \
     nativesdk-perl-module-lib \
@@ -182,12 +179,8 @@ TOOLCHAIN_HOST_TASK += " \
     nativesdk-perl-module-getopt-long \
     nativesdk-perl-module-pod-text \
     nativesdk-perl-module-getopt-std \
-    "
-
-# uncomment to add ads1256 to the list of modules loaded by default 
-# MACHINE_EXTRA_RDEPENDS += "kernel-module-ads1256"
-MACHINE_EXTRA_RRECOMMENDS += "kernel-module-ads1256"
+"
 
 IMAGE_ROOTFS_MAXSIZE = "1048576"
 
-export IMAGE_BASENAME = "geophone-image"
+export IMAGE_BASENAME = "geophone-gateway-image"
