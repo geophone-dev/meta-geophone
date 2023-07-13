@@ -154,7 +154,6 @@ IMAGE_INSTALL += " \
     ${RPI_STUFF} \
     ${GEO_STUFF} \
     ${WIFI} \
-    ${KERNEL_MODULES} \
     ${SW_UPDATE} \
 "
 
