@@ -9,11 +9,11 @@ S = "${WORKDIR}/git/Software/Source"
 
 inherit setuptools3
 
-do_install_prepend() {
+do_install:prepend() {
     export PIJUICE_BUILD_BASE=1
 }
 
-do_install_append() {
+do_install:append() {
     mv ${D}${datadir}/bin/pijuice_cli ${D}${bindir}
 
     rm -rv ${D}${datadir}

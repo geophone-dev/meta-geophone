@@ -1,6 +1,6 @@
 SRCREV = "648ffc470824c43eb0d16c485f4c24816b32cd6f"
 
-do_deploy_append() {
+do_deploy:append() {
     if [ -n "${RPI_USE_U_BOOT}" ]; then
         sed -i '/#kernel=/ c\kernel=u-boot.bin' ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
     elif [ -n "${KERNEL_IMAGETYPE}" ]; then

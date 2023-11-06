@@ -34,11 +34,11 @@ EXTRA_OECONF += "ax_cv__printf_string_null=yes \
                 --with-group=root \
                 " 
 
-do_configure_prepend() {
+do_configure:prepend() {
     ( cd ${S}; ./autogen.sh )
 }
 
-do_install_append() {
+do_install:append() {
     rm -v ${D}${sysconfdir}/*.sample
     rm -vr ${D}${datadir}/solaris-init
 
