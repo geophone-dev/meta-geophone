@@ -18,11 +18,14 @@ do_install:prepend() {
 }
 
 do_install:append() {
-    mv ${D}${datadir}/bin/pijuice_cli ${D}${bindir}
+    rm -rv ${D}${bindir}/pijuice_gui64
 
     rm -rv ${D}${datadir}
 }
 
 FILES:${PN} += " \
-            ${bindir}/pijuice_cli \
+            ${bindir}/pijuice_gui32 \
+            ${bindir}/pijuice_gui64 \
+            ${bindir}/pijuice_gui.py \
+            ${bindir}/pijuice_tray.py \
             "

@@ -16,7 +16,7 @@ DISTRO_FEATURES:append = "bluez5 bluetooth wifi"
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 
-PREFERRED_PROVIDER_udev = "eudev"
+# PREFERRED_PROVIDER_udev = "eudev"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 
 MACHINE_FEATURES:remove = "apm"
@@ -72,8 +72,9 @@ SDKMACHINE = "x86_64"
 #EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # for a root passwd, change 123456789 below to your password
-INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P 123456789 root; "
+# inherit extrausers
+
+# EXTRA_USERS_PARAMS = "usermod -P '123456789' root; "
 
 USER_CLASSES = "buildstats"
 PATCHRESOLVE = "noop"

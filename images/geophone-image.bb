@@ -127,11 +127,9 @@ GEO_STUFF = " \
 GPS_STUFF = " \
     gpsd \
     gps-utils \
-    geoclue \
 "
 
 POWER_MANAGEMENT = " \
-    nut \
     collectd \
 "
 
@@ -157,7 +155,6 @@ IMAGE_INSTALL += " \
     ${GPS_STUFF} \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
-    ${GEO_STUFF} \
     ${WIFI} \
     ${KERNEL_MODULES} \
     ${SW_UPDATE} \
@@ -190,6 +187,6 @@ TOOLCHAIN_HOST_TASK += " \
 # MACHINE_EXTRA_RDEPENDS += "kernel-module-ads1256"
 MACHINE_EXTRA_RRECOMMENDS += "kernel-module-ads1256"
 
-IMAGE_ROOTFS_MAXSIZE = "1048576"
+IMAGE_ROOTFS_MAXSIZE = "2097152"
 
 export IMAGE_BASENAME = "geophone-image"

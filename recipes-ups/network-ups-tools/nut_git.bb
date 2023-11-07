@@ -50,7 +50,7 @@ do_install:append() {
     install -d ${D}/var/state/ups/
 }
 
-SYSTEMD_SERVICE_${PN} = " \
+SYSTEMD_SERVICE:${PN} = " \
         nut-server.service \
         nut-monitor.service \
         nut-driver.target \
@@ -60,7 +60,7 @@ SYSTEMD_SERVICE_${PN} = " \
         nut-driver@.service \
         "
 
-FILES_${PN} += " \
+FILES:${PN} += " \
             ${datadir} \
             /var/state/ups \
             "
