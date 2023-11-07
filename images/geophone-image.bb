@@ -127,9 +127,11 @@ GEO_STUFF = " \
 GPS_STUFF = " \
     gpsd \
     gps-utils \
+    geoclue \
 "
 
 POWER_MANAGEMENT = " \
+    nut \
     collectd \
 "
 
@@ -153,6 +155,7 @@ IMAGE_INSTALL += " \
     ${ADDONS} \
     ${POWER_MANAGEMENT} \ 
     ${GPS_STUFF} \
+    ${GEO_STUFF} \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
     ${WIFI} \

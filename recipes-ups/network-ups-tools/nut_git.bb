@@ -10,9 +10,8 @@ DEPENDS += "python3 \
             i2c-tools \
             "
 
-SRCREV = "9defa7a9cc97491b4d595fe1233996b948ab730d"
+SRCREV = "e451a97bc7265deafa35fd54a8213e73b1074b4f"
 SRC_URI = "git://github.com/networkupstools/nut.git;protocol=https;branch=master \
-            file://nut_python.patch \
             file://ups.conf \
             file://upsd.conf \
             file://upsd.users \
@@ -22,17 +21,20 @@ S = "${WORKDIR}/git"
 
 inherit autotools systemd
 
-# We have to force ax_cv__printf_string_null=yes to avoid
-# crosscompilation issues
-EXTRA_OECONF += "ax_cv__printf_string_null=yes \
-                --with-linux_i2c=yes \
-                --with-solaris-smf=no \
-                --with-solaris-pkg-svr4=no \ 
-                --with-solaris-pkg-ips=no \
-                -with-systemdsystemunitdir=${systemd_system_unitdir} \
-                --with-user=root \
-                --with-group=root \
+# We have to force ax_cv__printf_string_null=yes and ac_cv_func_strstr=yes 
+# to avoid crosscompilation issues
+EXTRA_OECONF:append = "ax_cv__printf_string_null=yes \
+                        ac_cv_func_strstr=yes \
+                        --with-linux_i2c=yes \
+                        --with-solaris-smf=no \
+                        --with-solaris-pkg-svr4=no \ 
+                        --with-solaris-pkg-ips=no \
+                        -with-systemdsystemunitdir=${systemd_system_unitdir} \
+                        --with-user=root \
+                        --with-group=root \
                 " 
+
+INSANE_SKIP += "configure-unsafe"
 
 do_configure:prepend() {
     ( cd ${S}; ./autogen.sh )
@@ -40,7 +42,7 @@ do_configure:prepend() {
 
 do_install:append() {
     rm -v ${D}${sysconfdir}/*.sample
-    rm -vr ${D}${datadir}/solaris-init
+    rm -vr ${D}/usr/local
 
     install -m 0644 ${WORKDIR}/ups.conf ${D}${sysconfdir}/ups.conf
     install -m 0644 ${WORKDIR}/upsd.conf ${D}${sysconfdir}/upsd.conf

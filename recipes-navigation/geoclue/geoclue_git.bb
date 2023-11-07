@@ -41,14 +41,14 @@ EXTRA_OEMESON += " \
     -Ddemo-agent=false \
 "
 
-FILES_${PN} += " \
+FILES:${PN}:append = " \
     ${datadir}/dbus-1/system-services \
     ${libdir} \
     ${systemd_unitdir} \
     ${prefix}/libexec \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev:append = " \
     ${datadir}/dbus-1/interfaces \
     ${datadir}/gir-1.0 \
 "

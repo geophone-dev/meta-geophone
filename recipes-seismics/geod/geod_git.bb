@@ -12,6 +12,6 @@ S = "${WORKDIR}/git"
 
 inherit cmake systemd
 
-SYSTEMD_SERVICE_${PN} += " \
+SYSTEMD_SERVICE:${PN} += " \
         geod.service \
         "

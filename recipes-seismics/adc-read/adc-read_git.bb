@@ -14,7 +14,7 @@ DEPENDS += " \
     pkgconfig-native \
     "
 
-SRCREV = "0445498e747cae138b1ce82ed56062ed75d0c4b3"
+SRCREV = "26107643119deeacdf01a2816607685170b83437"
 SRC_URI = "git://github.com/zuckerman-dev/adc-reader.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
