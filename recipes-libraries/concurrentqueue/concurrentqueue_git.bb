@@ -1,7 +1,7 @@
 DESCRIPTION = "An industrial-strength lock-free queue for C++."
 SECTION = "devel"
 LICENSE = "BSD"
-LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/BSD;md5=3775480a712fc46a69647678acb234cb"
+LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/BSD-2-Clause;md5=cb641bc04cda31daea161b1bc15da69f"
 
 DEPENDS += "boost"
 

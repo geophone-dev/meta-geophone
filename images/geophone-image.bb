@@ -33,7 +33,7 @@ EXTRA_TOOLS = " \
     hostapd \
     bluez5 \
     bridge-utils \
-    dhcp-server \
+    dhcpcd \
     iperf3 \
     iproute2 \
     iptables \
@@ -93,7 +93,7 @@ ROOTFS_POSTPROCESS_COMMAND += " \
     create_opt_dir ; \
 "
 
-DEPENDS += "bootfiles"
+DEPENDS += "rpi-bootfiles"
 
 WIFI = " \
     crda \
@@ -165,6 +165,7 @@ IMAGE_INSTALL += " \
 
 TOOLCHAIN_TARGET_TASK += " \
     kernel-devsrc \
+    pkgconfig \
     concurrentqueue-dev \
     cppzmq-dev \
     zeromq-staticdev \

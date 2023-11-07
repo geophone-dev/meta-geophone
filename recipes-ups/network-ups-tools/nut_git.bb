@@ -2,7 +2,7 @@ DESCRIPTION = "Network UPS Tools is a collection of programs which provide a com
                 for monitoring and administering UPS, PDU and SCD hardware"
 SECTION = "devel"
 LICENSE = "GPLv3"
-LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-3.0;md5=c79ff39f19dfec6d293b95dea7b07891"
+LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-3.0-only;md5=c79ff39f19dfec6d293b95dea7b07891"
 
 DEPENDS += "python3 \
             python3-native \ 

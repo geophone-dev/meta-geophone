@@ -1,0 +1,22 @@
+From 4053448bae31eefb425b4b1a23aeba0e2d47fd57 Mon Sep 17 00:00:00 2001
+From: Mikhail Tsukerman <miketsukerman@gmail.com>
+Date: Tue, 7 Nov 2023 01:30:25 +0100
+Subject: [PATCH] Fix setuptools issue
+
+---
+ Software/Source/setup.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 1f80c13..f351247 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,4 +1,4 @@
+-from distutils.core import setup
++from setuptools import setup
+ #from distutils.command.install_data import install_data
+ #from distutils.dep_util import newer
+ #from distutils.log import info
+-- 
+2.25.1
+

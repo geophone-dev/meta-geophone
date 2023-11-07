@@ -7,6 +7,10 @@ DEPENDS = " \
 
 S = "${WORKDIR}/git/Software/Source"
 
+SRC_URI:append = " \            
+    file://0002-Fix-setuptools-issue.patch \
+    "
+
 inherit setuptools3
 
 do_install:prepend() {
@@ -19,6 +23,6 @@ do_install:append() {
     rm -rv ${D}${datadir}
 }
 
-FILES_${PN} += " \
+FILES:${PN} += " \
             ${bindir}/pijuice_cli \
             "

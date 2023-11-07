@@ -11,6 +11,7 @@ do_install() {
 }
 
 
-FILES_${PN} += " \
+FILES:${PN} = " \
+        ${sysconfdir}/pijuice/battery \
         ${datadir}/pijuice/firmware \
         "

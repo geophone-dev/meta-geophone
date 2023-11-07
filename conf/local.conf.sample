@@ -21,7 +21,7 @@ VIRTUAL-RUNTIME_init_manager = "systemd"
 
 MACHINE_FEATURES:remove = "apm"
 
-IMAGE_FSTYPES = "tar.xz ext4 ext4.gz"
+IMAGE_FSTYPES = "tar.xz ext4 ext4.gz wic"
 
 RPI_USE_U_BOOT = "1"
 
@@ -55,8 +55,7 @@ ENABLE_SPI_BUS = "1"
 ENABLE_I2C = "1"
 KERNEL_MODULE_AUTOLOAD_rpi += "i2c-dev i2c-bcm2708"
 
-# default is still 4.19, uncomment the following for 5.4
-# PREFERRED_VERSION_linux-raspberrypi = "5.4.%"
+# PREFERRED_VERSION_linux-raspberrypi = "5.19.%"
 
 
 # DL_DIR = "/src/oe"
