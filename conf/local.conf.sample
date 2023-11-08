@@ -9,9 +9,7 @@ BBMASK = "meta-networking/recipes-kernel/wireguard"
 
 LICENSE_FLAGS_ACCEPTED = "commercial"
 
-DISTRO_FEATURES = "ext2 opengl usbhost systemd ${DISTRO_FEATURES_LIBC}"
-
-DISTRO_FEATURES:append = "bluez5 bluetooth wifi"
+DISTRO_FEATURES = "ext2 opengl usbhost systemd usrmerge bluetooth wifi ${DISTRO_FEATURES_LIBC}"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"

@@ -96,10 +96,7 @@ ROOTFS_POSTPROCESS_COMMAND += " \
 DEPENDS += "rpi-bootfiles"
 
 WIFI = " \
-    crda \
     iw \
-    linux-firmware-rpidistro-bcm43430 \
-    linux-firmware-rpidistro-bcm43455 \
     wpa-supplicant \
 "
 
